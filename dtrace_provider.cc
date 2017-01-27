@@ -91,6 +91,7 @@ namespace node {
     // store in provider object
     DTraceProbe *probe = Nan::ObjectWrap::Unwrap<DTraceProbe>(pd->ToObject());
     obj->Set(info[0]->ToString(), pd);
+    pd->Set(Nan::New<String>("provider").ToLocalChecked(), obj);
 
     // add probe to provider
     for (int i = 0; i < USDT_ARG_MAX; i++) {
