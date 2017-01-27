@@ -14,6 +14,7 @@ namespace node {
     for (size_t i = 0; i < argc; i++)
       delete(this->arguments[i]);
     usdt_probe_release(probedef);
+    this->provider.Reset();
   }
 
   Nan::Persistent<FunctionTemplate> DTraceProbe::constructor_template;

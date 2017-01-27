@@ -70,6 +70,8 @@ namespace node {
 
     v8::Local<Value> _fire(Nan::NAN_METHOD_ARGS_TYPE, size_t);
 
+    Nan::Persistent<Object> provider;
+
     static Nan::Persistent<FunctionTemplate> constructor_template;
 
     DTraceProbe();
